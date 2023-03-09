@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Skin Cancer Disease Classification</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body
+		{
+			margin: 0;
+			padding: 0;
+			font-size: 18px;
+			font-family: 'Source Code Pro', monospace;
+			background-color: #56c1d9;
+			color: white;
+		}
+		.header
+		{   
+			text-align: center;
+			text-decoration: underline;
+			text-transform: uppercase;
+			font-size: 15px;
+		}
+		.header img
+		{
+			width: 90%;
+			height: 250px;
+			margin: 5px auto;
+		}
+		.upload-file-image{
+			text-align: center;
+		}
+		.upload-file-image input{
+			font-size: 15px;
+			color: black;
+			font-family: 'Source Code Pro', monospace;
+		}
+		.prediction-div{
+			text-align: center;
+		}
+		.prediction-div img{
+			width: 300px;
+			margin: 5px;
+		}
+		.prediction-div h5{
+			font-size: 20px;
+		}
+		hr{
+			color: white;
+			background-color: white;
+			width: 600px;
+		}
+		span{
+			text-transform: uppercase;
+		}
+		.footer-file
+		{
+			width: 600px;
+			margin: auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class = "container">
+
+		<div class = "header">
+			<h2>Welcome to the Skin Cancer Classification on Image</h2>
+			<img src = "https://media.npr.org/assets/img/2022/07/22/gettyimages-1339204507_custom-38ce412d31b7ec8409561e5539dff74fcd35d2e4-s900-c85.webp">
+		</div>
+        
+		<div class="upload-file-image">
+			<h4>Upload the Image</h4>
+			<form action="/" method = "post" enctype="multipart/form-data">
+				<input type="file" name="file" value="file" autocomplete="off" required>
+				<input type="submit" name="submit" value="Click here to submit">
+			</form>
+		</div>
+		<hr>
+
+		<div class = "prediction-div">
+			<img src = {{img}} alt="Flowers in Chania">
+            {% if result == 0 %}
+                <h3 class = "h3_block">The prediction of the image is <span>"Benign"</span>.</h3>
+            {% elif result == 1 %}
+                <h3 class = "h3_block">The prediction of the image is <span>"Malignant_Pre_B"</span>.</h3>
+            {% elif result == 2 %}
+                <h3 class = "h3_block">The prediction of the image is <span>"Malignant_Pro_B"</span>.</h3>
+            {% elif result == 3 %}
+                <h3 class = "h3_block">The prediction of the image is <span>"Malignant_early_Pre_B"</span>.</h3>
+            {% endif %}
+		</div>
+
+		<footer class="footer-file">
+			<h6>Courtesy by: Atikul Islam Sajib, Machine Learning Enginner.</h6>
+		</footer>
+	</div>
+</body>
+</html>
